@@ -79,6 +79,7 @@
 
 	}
 	function RegSignature(){
+		alert('begin');
 		var params = {appId:{{appid}}, timestamp:"11222333", nonceStr:"aabbcc", signature:"xxxyyyy", jsApiList:["externAction", "getVersion", "selectContact", "selectGroupDiscuss"]};
 		try{
     	mqq.invoke("QQOfficeOpen", "config", params, function(t){
@@ -112,6 +113,7 @@
 <button type='button' onclick='GetVersion()'>点击获得版本</button>
 <br/>
 <button type='button' onclick='GetNetworkStatus()'>点击获得网络状态</button>
+<br/>
 <button type='button' onclick='RegSignature()'>注册</button>
 
 
