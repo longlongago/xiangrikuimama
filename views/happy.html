@@ -78,6 +78,18 @@
     }
 
 	}
+	function RegSignature(){
+		var params = {appId:{{appid}}, timestamp:"11222333", nonceStr:"aabbcc", signature:"xxxyyyy", jsApiList:["externAction", "getVersion", "selectContact", "selectGroupDiscuss"]};
+		try{
+    	mqq.invoke("QQOfficeOpen", "config", params, function(t){
+    		alert('ret:'+t.enable+' type:'+t.type);
+    	});
+		}catch(e){
+			alert('call err:'+e.message+' name:'+e.name+' code:'+e.number);
+		}finally{
+    }
+
+	}
 
 </script>
 <p>This is just an awesome page.</p> 
@@ -100,6 +112,7 @@
 <button type='button' onclick='GetVersion()'>点击获得版本</button>
 <br/>
 <button type='button' onclick='GetNetworkStatus()'>点击获得网络状态</button>
+<button type='button' onclick='RegSignature()'>注册</button>
 
 
 <!-- nnnnnnnnnnnnnnnnnnnnnnnn-->
