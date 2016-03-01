@@ -192,6 +192,18 @@ function onLoad() {
 	} else {
 		divPQQ.setAttribute("style","display:none");
 		divMQQ.setAttribute("style","display");
+		if(qqOffice.getPlatform() == 'android'){//判断是否是android
+			qqOffice.checkCurrentUser({appId:{{appid}}, openId:"{{openId}}"}, 
+					function(param){
+						if(param.result == 1){
+							m_apiEleInvokeResult.innerText = "是当前用户";
+						}else if(param.result == 0){
+							window.location.href = "https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id={{appid}}&redirect_uri=http%3A%2F%2F{{domain}}%2Fcallback%3Ftype%3Djumpauthcode&scope=get_user_info,list_album,upload_pic,do_like&style=office";
+						}
+			});
+		}
+
+
 	}
 	
 }
