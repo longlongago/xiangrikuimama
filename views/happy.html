@@ -80,7 +80,7 @@
 	}
 	function RegSignature(){
 		alert('begin');
-		var params = {appId:{{appid}}, timestamp:11222333, nonceStr:"aabbcc", signature:"xxxyyyy"};
+		var params = {appId:{{appid}}, timestamp:11222333, nonceStr:"aabbcc", signature:"xxxyyyy", jsApiList:["externAction", "getVersion", "selectContact", "selectGroupDiscuss"]};
 		try{
     	mqq.invoke("QQOfficeOpen", "config", params, function(t){
     		alert('ret:'+t.result);
@@ -88,7 +88,7 @@
 		}catch(e){
 			alert('call err:'+e.message+' name:'+e.name+' code:'+e.number);
 		}finally{
-			alert('end');
+		alert('end');
     }
 
 	}
